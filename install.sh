@@ -27,7 +27,7 @@ update-alternative(){
     if [[ $bindir == *"bin"* ]]; then
       echo $i $bindir
       update-alternatives --install /usr/bin/python3 python3 $bindir $counter
-      counter++
+      let counter++
     fi
   done
   update-alternatives --install /usr/bin/python3 python3 $(which python3.10) 1
@@ -41,7 +41,7 @@ update-alternative(){
 PYVER=$(python3 -V)
 echo $PYVER
 
-if ([ "$PYVER" != *"3.10"* ] && [ $(which python3.10) != *"python"* ]); then
+if [[ "$PYVER" != *"3.10"* && $(which python3.10) != *"python"* ]]; then
   echo "looks like you dont have python 3.10 installed"
   echo -n "would you like to compile and install Python 3.10? keep in mind it can take awhile Y/N : " 
   read USERYN
@@ -58,7 +58,7 @@ if ([ "$PYVER" != *"3.10"* ] && [ $(which python3.10) != *"python"* ]); then
   esac
 fi
 
-if ([ "$PYVER" != *"3.10"* ] && [ $(which python3.10) == *"python"* ]); then
+if [[ "$PYVER" != *"3.10"*  &&  $(which python3.10) == *"python"* ]]; then
   update-alternative
 fi
 
