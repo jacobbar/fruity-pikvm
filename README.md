@@ -15,5 +15,5 @@ Install git, clone and run the script with the following code
 sudo apt install -y git
 git clone http://github.com/jacobbar/fruity-pikvm
 cd fruity-pikvm
-./install.sh
+sudo ./install.sh
 ```
