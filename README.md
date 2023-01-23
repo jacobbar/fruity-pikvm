@@ -6,7 +6,7 @@ it is based on the original raspberry pikvm software which can be found [HERE](h
 
 This script was tested on OrangePi Zero 2, a working OS image for OrangePi Zero 2 can be downloaded [HERE](https://github.com/jacobbar/fruity-pikvm/releases/download/os-images/Orangepizero2_2.2.2_ubuntu_jammy_server_linux5.13.0.zip)
 
-At the moment this script only supports architecture arm64 aka aarch64, and should work with any debian based distrubution such as Ubuntu, Debain, Armbian etc...
+At the moment this script only supports architecture arm64 aka aarch64, and should work with any debian based distribution such as Ubuntu, Debian, Armbian etc...
 
 ## Installation
 Install git, clone and run the script with the following code
