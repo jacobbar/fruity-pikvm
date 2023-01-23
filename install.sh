@@ -63,7 +63,21 @@ if [[ "$PYVER" != *"3.10"*  &&  $(which python3.10) == *"python"* ]]; then
 fi
 
 
-DEBFILE="fruity-pikvm_3.191_arm64.deb"
+ARCH=$(uname -m)
+case $ARCH in
+  "armv7l" )
+    ARCHN="armhf"
+   ;;
+  "aarch64" )
+    ARCHN="arm64"
+  ;;
+  *)
+    echo "$ARCH is currently not supported"
+    exit
+  ;;
+esac
+
+DEBFILE="fruity-pikvm_3.191_$ARCHN.deb"
 DEBURL="https://github.com/jacobbar/fruity-pikvm/releases/download/debfile/"
 
 sudo apt update
