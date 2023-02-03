@@ -19,5 +19,5 @@ cd /usr/local/lib/python3.10/kvmd-packages/
 patch -s -p0 < $PATCHFILE
 
 echo "KVMD is patched"
-cd "CURRENTWD"
+cd "$CURRENTWD"
 exit
