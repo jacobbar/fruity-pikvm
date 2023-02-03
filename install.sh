@@ -77,7 +77,7 @@ case $ARCH in
   ;;
 esac
 
-DEBFILE="fruity-pikvm_3.191_$ARCHN.deb"
+DEBFILE="fruity-pikvm_0.2_$ARCHN.deb"
 DEBURL="https://github.com/jacobbar/fruity-pikvm/releases/download/debfile/"
 
 sudo apt update
@@ -89,3 +89,4 @@ echo "-->> installing fruity-pikvm"
 dpkg -i $DEBFILE
 rm  $DEBFILE
 sudo kvmd -m 
+echo "reboot and enjoy"
