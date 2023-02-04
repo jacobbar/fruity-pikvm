@@ -18,7 +18,11 @@ cd fruity-pikvm
 sudo ./install.sh
 ```
 ## MSD KVMD Patch
-Befor applying the patch, you would need to resize your SD card and create a new partition, finally you need to add the new partition to /etc/fstab
+Befor applying the patch, you would need to resize your installation partition on the SD card using GParted and create an additional partition for the msd, finally you need to add a mount entry of the new partition to /etc/fstab where `/dev/mmcblk1p2` matches the name of the new partition you created
+
+```
+/dev/mmcblk1p2 /var/lib/kvmd/msd  ext4  nodev,nosuid,noexec,ro,errors=remount-ro,data=journal,X-kvmd.otgmsd-root=/var/lib/kvmd/msd,X-kvmd.otgmsd-user=kvmd  0 0
+```
 
 Applying the MSD KVMD patch
 ```
