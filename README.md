@@ -24,6 +24,14 @@ Befor applying the patch, you would need to resize your installation partition o
 /dev/mmcblk1p2 /var/lib/kvmd/msd  ext4  nodev,nosuid,noexec,ro,errors=remount-ro,data=journal,X-kvmd.otgmsd-root=/var/lib/kvmd/msd,X-kvmd.otgmsd-user=kvmd  0 0
 ```
 
+On some platform, the storage devices sequence may not be consisted, using above sample, you may boot into emergency mode sometimes. To overcome this issue, you could replace the device name with UUID in the fstab.
+
+To get the UUID of mmcblk1p2 (your device name may be variant):
+
+```
+lsblk --fs | grep mmcblk1p2 | awk '{print $5}'
+```
+
 Applying the MSD KVMD patch
 ```
 sudo ./msd-patch.sh
