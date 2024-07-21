@@ -29,3 +29,7 @@ Applying the MSD KVMD patch
 sudo ./msd-patch.sh
 ```
 to enable msd after applying the patch you would need to comment out the msd override configuration in file /etc/kvmd/override.yaml
+
+## Tested device
+- OrangePi Zero 2 (tested by [@jacobbar](https://github.com/jacobbar), using official image `Orangepizero2_2.2.2_ubuntu_jammy_server_linux5.13.0.img`)
+- OrangePi Zero 3 (tested by [@YipKo](https://github.com/YipKo), using official image `Orangepizero3_1.0.2_ubuntu_jammy_server_linux6.1.31.img`, All functions works well)
